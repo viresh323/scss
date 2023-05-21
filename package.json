@@ -8,21 +8,18 @@
     "stylelint": "^15.6.2"
   },
   "devDependencies": {
-    "husky": "^4.3.8",
+    "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
     "stylelint-config-prettier": "^9.0.5",
     "stylelint-config-sass-guidelines": "^10.0.0",
-    "stylelint-prettier": "^3.0.0"
+    "stylelint-prettier": "^3.0.0",
+    "pre-commit": "lint-staged"
   },
   "scripts": {
     "lint": "stylelint ./**/*.scss",
-    "lint:fix": "yarn lint --fix"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "lint:fix": "yarn lint --fix",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.scss": "yarn lint:fix"
